@@ -21,6 +21,22 @@ class CharactersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @character.update(character_params)
+      redirect_to character_path(@character)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @character.destroy
+    redirect_to characters_path
+  end
+
 
   private
 
@@ -29,7 +45,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name)
+    params.require(:character).permit(:name, :photo)
   end
 
 

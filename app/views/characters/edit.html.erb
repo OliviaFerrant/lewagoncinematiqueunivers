@@ -1,14 +1,13 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row d-flex justify-content-center m-5">
     <div class="col-12">
       <%= simple_form_for @character do |c| %>
         <%= c.input :name %>
         <%= c.input :photo %>
         <%= c.input :photo_cache, as: :hidden %>
         <%= c.full_error :token %>
-        <%= c.submit 'Save' %>
+        <%= c.submit 'Update', class: "btn btn-primary"%>
       <% end %>
     </div>
   </div>
 </div>
-

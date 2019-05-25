@@ -1,19 +1,43 @@
 
-  <div class="titles">
-    <h1>List of characters:</h1>
-    <%= link_to "Create a new character", new_character_path %>
-  </div>
-  <div class="cards-container">
-<div class="d-flex bd-highlight mb-3">
-  <% @characters.each do |character| %>
-    <div class="card-box p-2 bd-highlight col">
-      <div class="cards">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path character.photo, height: 300, width: 400, crop: :fill %>)">
-        </div>
-          <h2><%= link_to character.name, character_path(character) %></h2>
+<main role="main">
+  <section class="jumbotron text-center banner-core">
+    <div class="container">
+      <h1 class="jumbotron-heading">Le Wagon Cinematic Univers</h1>
+      <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet porta dui, nec bibendum quam congue ultrices. Nulla sagittis dui tortor, at facilisis enim tincidunt venenatis. </p>
+      <p>
+        <%= link_to "Create a new character", new_character_path, class: "btn btn-primary my-2" %>
+      </p>
+    </div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <% @characters.each do |character| %>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="<%= cl_image_path character.photo, height: 300, width: 400, crop: :fill %>">
+              <div class="card-body">
+                <p class="card-text"><%= character.name %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <%= link_to character_path(character) do%>
+                        <i class="far fa-eye"></i> <span>View</span>
+                      <% end %>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <%= link_to edit_character_path(character) do%>
+                        <i class="fas fa-pencil-alt"></i> <span>Edit</span>
+                      <% end %>
+                    </button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-  <% end %>
-</div>
-</div>
-
+  </div>
+</main>

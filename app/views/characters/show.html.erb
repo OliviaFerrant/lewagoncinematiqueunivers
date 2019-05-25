@@ -3,6 +3,7 @@
     <div class="col-12 col-sm-2">
 
       <h1><%= @character.name %></h1>
+      <%= cl_image_tag @character.photo, height: 300, width: 400, crop: :fill %>
       <%= link_to characters_path do%>
         <i class="fas fa-home"></i> <span>Home</span>
       <% end %>
