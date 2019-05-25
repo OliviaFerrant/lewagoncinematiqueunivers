@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row d-flex justify-content-center m-5">
+    <div class="col-12">
+      <%= simple_form_for [@character, @power] do |power| %>
+        <%= power.input :power %>
+        <%= power.full_error :token %>
+        <%= power.submit 'Add power', class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+</div>
