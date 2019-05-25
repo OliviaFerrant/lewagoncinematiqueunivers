@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :destroy]
+  before_action :set_character, only: [:show, :edit, :update, :destroy]
 
   def index
     @characters = Character.all
@@ -28,7 +28,7 @@ class CharactersController < ApplicationController
     if @character.update(character_params)
       redirect_to character_path(@character)
     else
-      render :new
+      render :edit
     end
   end
 
