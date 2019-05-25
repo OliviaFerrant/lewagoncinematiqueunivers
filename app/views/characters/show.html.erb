@@ -4,8 +4,11 @@
 
       <h1><%= @character.name %></h1>
       <%= cl_image_tag @character.photo, height: 300, width: 400, crop: :fill %>
-      <p><% @character.powers.each do |sp| %></p>
-        <p><%= sp.power %></p>
+      <p><% @character.superpowers.each do |sp| %></p>
+        <p><%= sp.power.name %> | <%= link_to superpower_path(sp), method: :delete, data: {confirm: "Are you sure?"} do %>
+        <i class="fas fa-trash-alt"></i> <span>Delete</span>
+      <% end %> </p>
+
       <% end %>
 
       <%= link_to characters_path do%>
@@ -16,9 +19,11 @@
         <i class="fas fa-pencil-alt"></i> <span>Edit</span>
       <% end %>
 
-      <%= link_to new_character_power_path(@character) do%>
+      <%= link_to new_character_superpower_path(@character) do%>
         <i class="fab fa-superpowers"></i> <span>Add a super power</span>
       <% end %>
+
+
     </div>
   </div>
 </div>
