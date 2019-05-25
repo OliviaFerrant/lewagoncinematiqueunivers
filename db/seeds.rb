@@ -1,9 +1,10 @@
 puts "deleting DB"
+Superpower.delete_all
 Power.delete_all
 
 puts "Creating new powers"
 
-superpower = [
+allpower = [
               "Regenerative Healing Factor",
               "Adoptive Muscle Memory",
               "Body Part Substitution",
@@ -633,8 +634,8 @@ superpower = [
               "Vocifery"
               ]
 
-superpower.each do |power|
-  Power.create!(name: power)
+allpower.each do |power|
+  Power.create(name: power)
 end
 
 puts "Super power created"

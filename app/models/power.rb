@@ -1,6 +1,6 @@
 class Power < ApplicationRecord
-  has_many :superpower
-  validates :power, presence: true
+  has_many :superpowers
+  validates :name, presence: true
   before_destroy :check
 
   def check
