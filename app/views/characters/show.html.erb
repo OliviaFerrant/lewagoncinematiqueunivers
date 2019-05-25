@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center m-5">
+    <div class="col-12 col-sm-2">
+
+      <h1><%= @character.name %></h1>
+      <%= link_to characters_path do%>
+        <i class="fas fa-home"></i> <span>Home</span>
+      <% end %>
+
+      <%= link_to edit_character_path do%>
+        <i class="fas fa-pencil-alt"></i> <span>Edit</span>
+      <% end %>
+    </div>
+  </div>
+</div>
