@@ -634,7 +634,7 @@ superpower = [
               ]
 
 superpower.each do |power|
-  Power.create!(power: power)
+  Power.create!(name: power)
 end
 
 puts "Super power created"
