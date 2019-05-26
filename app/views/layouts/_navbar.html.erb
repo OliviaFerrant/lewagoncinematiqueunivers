@@ -1,12 +1,17 @@
-<div class="navbar navbar-dark bg-dark box-shadow">
-  <div class="container d-flex justify-content-between">
-    <span><%= link_to root_path do %>
-      <i class="fas fa-globe"></i>
-      <strong>WCU</strong>
-    <% end %>
-    </span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="/characters">
+    <i class="fab fa-superpowers"></i>WCU
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/characters">Home</a>
+      </li>
+    </ul>
   </div>
 </div>

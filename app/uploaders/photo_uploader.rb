@@ -8,6 +8,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
     resize_to_fit 150, 200
   end
 
+  version :cover do
+    resize_to_fit 1920, 1080
+  end
+
   # Choose what kind of storage to use for this uploader:
   # storage :fog
 

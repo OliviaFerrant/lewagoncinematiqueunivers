@@ -1,29 +1,22 @@
-<div class="container-fluid">
-  <div class="row d-flex justify-content-center m-5">
-    <div class="col-6">
-
-      <h1><%= @character.name %></h1>
-      <%= cl_image_tag @character.photo, height: 300, width: 400, crop: :fill %>
-      <p><% @character.superpowers.each do |sp| %></p>
-        <p><%= sp.power.name %> | <%= link_to superpower_path(sp), method: :delete, data: {confirm: "Are you sure?"} do %>
-        <i class="fas fa-trash-alt"></i> <span>Delete</span>
-      <% end %> </p>
-
-      <% end %>
-
-      <%= link_to characters_path do%>
-        <i class="fas fa-home"></i> <span>Home</span>
-      <% end %>
-
-      <%= link_to edit_character_path do%>
+<%= render "layouts/navbar" %>
+<div class="cover" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @character.photo.url(:cover), height: 300, width: 400, crop: :fill %>);">
+  <div class="container">
+    <h1><%= @character.name %></h1>
+    <h2>Super Powers List :</h2>
+    <% @character.superpowers.each do |sp| %>
+      <p><%= sp.power.name %> | <%= link_to superpower_path(sp), method: :delete, data: {confirm: "Are you sure?"} do %>
+      <i class="fas fa-trash-alt"></i> <span>Delete</span>
+    <% end %> </p>
+    <% end %>
+    <button type="button" class="btn btn-sm btn-outline-secondary">
+      <%= link_to edit_character_path(@character) do%>
         <i class="fas fa-pencil-alt"></i> <span>Edit</span>
       <% end %>
-
+    </button>
+    <button type="button" class="btn btn-sm btn-outline-secondary">
       <%= link_to new_character_superpower_path(@character) do%>
-        <i class="fab fa-superpowers"></i> <span>Add a super power</span>
+        <i class="fas fa-pencil-alt"></i> <span>Add a superpower</span>
       <% end %>
-
-
-    </div>
+    </button>
   </div>
 </div>
