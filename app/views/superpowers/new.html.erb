@@ -1,11 +1,9 @@
-<div class="container">
-  <div class="row d-flex justify-content-center m-5">
-    <div class="col-12">
-      <%= simple_form_for [@character, @superpower] do |sp| %>
-        <%= sp.association :power, collection: Power.all %>
-        <%= sp.full_error :token %>
-        <%= sp.submit 'Add power', class: "btn btn-primary"%>
-      <% end %>
-    </div>
+<section class="jumbotron text-center new-core">
+  <div class="container">
+    <%= simple_form_for [@character, @superpower] do |sp| %>
+      <%= sp.association :power, collection: Power.all %>
+      <%= sp.full_error :token %>
+      <%= sp.submit 'Add power', class: "btn btn-primary"%>
+    <% end %>
   </div>
-</div>
+</section>
